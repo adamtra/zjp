@@ -1,2 +1,2 @@
-# zjp
+# Adam Trawiński TypeScript
  
