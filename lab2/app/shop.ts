@@ -12,6 +12,7 @@ export class Item {
 
 export class GildedRose {
     items: Array<Item>;
+    dontDecreaseQuality = ['Sulfuras, Hand of Ragnaros', 'Aged Brie', 'Backstage passes to a TAFKAL80ETC concert'];
 
     constructor(items = [] as Array<Item>) {
         this.items = items;
@@ -47,7 +48,7 @@ export class GildedRose {
     }
 
     private decreaseNormalPoduct(item: Item) {
-        if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+        if (this.dontDecreaseQuality.indexOf(item.name) === -1) {
             this.decreaseQuality(item);
         }
     }
@@ -81,10 +82,8 @@ export class GildedRose {
 
     private decreaseQuality(item: Item) {
         if (item.quality > 0) {
-            if (item.name != 'Sulfuras, Hand of Ragnaros') {
-                item.quality = item.quality - 1;
-                this.conjuredItem(item);
-            }
+            item.quality = item.quality - 1;
+            this.conjuredItem(item);
         }
     }
 
