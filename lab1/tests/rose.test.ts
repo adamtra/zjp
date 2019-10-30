@@ -39,6 +39,43 @@ describe('Gilded Rose', () => {
         testItem(items, expected);
     });
 
+    it('Normal item 2', () => {
+        const expected = [
+            { sellIn: 5, quality: 7 },
+            { sellIn: 4, quality: 6 },
+            { sellIn: 3, quality: 5 },
+            { sellIn: 2, quality: 4 },
+            { sellIn: 1, quality: 3 },
+            { sellIn: 0, quality: 2 },
+            { sellIn: -1, quality: 0 },
+            { sellIn: -2, quality: 0 },
+            { sellIn: -3, quality: 0 },
+            { sellIn: -4, quality: 0 },
+            { sellIn: -5, quality: 0 },
+            { sellIn: -6, quality: 0 },
+            { sellIn: -7, quality: 0 },
+            { sellIn: -8, quality: 0 },
+            { sellIn: -9, quality: 0 },
+            { sellIn: -10, quality: 0 },
+            { sellIn: -11, quality: 0 },
+            { sellIn: -12, quality: 0 },
+            { sellIn: -13, quality: 0 },
+            { sellIn: -14, quality: 0 },
+            { sellIn: -15, quality: 0 },
+            { sellIn: -16, quality: 0 },
+            { sellIn: -17, quality: 0 },
+            { sellIn: -18, quality: 0 },
+            { sellIn: -19, quality: 0 },
+            { sellIn: -20, quality: 0 },
+            { sellIn: -21, quality: 0 },
+            { sellIn: -22, quality: 0 },
+            { sellIn: -23, quality: 0 },
+            { sellIn: -24, quality: 0 },
+        ]
+        const items = [new Item("Elixir of the Mongoose", 5, 7)];
+        testItem(items, expected);
+    });
+
     it('Aged Brie', () => {
         const expected = [
             { sellIn: 2, quality: 0 },
@@ -112,8 +149,82 @@ describe('Gilded Rose', () => {
         const items = [new Item("Sulfuras, Hand of Ragnaros", 0, 80)];
         testItem(items, expected);
     });
+
+    it('Sulfuras, Hand of Ragnaros 2', () => {
+        const expected = [
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+            { sellIn: -1, quality: 80 },
+        ]
+        const items = [new Item("Sulfuras, Hand of Ragnaros", -1, 80)];
+        testItem(items, expected);
+    });
     
     it('Backstage passes', () => {
+        const expected = [
+            { sellIn: 15, quality: 20 },
+            { sellIn: 14, quality: 21 },
+            { sellIn: 13, quality: 22 },
+            { sellIn: 12, quality: 23 },
+            { sellIn: 11, quality: 24 },
+            { sellIn: 10, quality: 25 },
+            { sellIn: 9, quality: 27 },
+            { sellIn: 8, quality: 29 },
+            { sellIn: 7, quality: 31 },
+            { sellIn: 6, quality: 33 },
+            { sellIn: 5, quality: 35 },
+            { sellIn: 4, quality: 38 },
+            { sellIn: 3, quality: 41 },
+            { sellIn: 2, quality: 44 },
+            { sellIn: 1, quality: 47 },
+            { sellIn: 0, quality: 50 },
+            { sellIn: -1, quality: 0 },
+            { sellIn: -2, quality: 0 },
+            { sellIn: -3, quality: 0 },
+            { sellIn: -4, quality: 0 },
+            { sellIn: -5, quality: 0 },
+            { sellIn: -6, quality: 0 },
+            { sellIn: -7, quality: 0 },
+            { sellIn: -8, quality: 0 },
+            { sellIn: -9, quality: 0 },
+            { sellIn: -10, quality: 0 },
+            { sellIn: -11, quality: 0 },
+            { sellIn: -12, quality: 0 },
+            { sellIn: -13, quality: 0 },
+            { sellIn: -14, quality: 0 }, 
+        ]
+        const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)];
+        testItem(items, expected);
+    });
+
+    it('Backstage passes 2', () => {
         const expected = [
             { sellIn: 10, quality: 49 },
             { sellIn: 9, quality: 50 },
@@ -184,6 +295,43 @@ describe('Gilded Rose', () => {
             { sellIn: -26, quality: 0 },
         ]
         const items = [new Item("Conjured Mana Cake", 3, 6)];
+        testItem(items, expected);
+    });
+
+    it('Conjured 2', () => {
+        const expected = [
+            { sellIn: 2, quality: 15 },
+            { sellIn: 1, quality: 13 },
+            { sellIn: 0, quality: 11 },
+            { sellIn: -1, quality: 7 },
+            { sellIn: -2, quality: 3 },
+            { sellIn: -3, quality: 0 },
+            { sellIn: -4, quality: 0 },
+            { sellIn: -5, quality: 0 },
+            { sellIn: -6, quality: 0 },
+            { sellIn: -7, quality: 0 },
+            { sellIn: -8, quality: 0 },
+            { sellIn: -9, quality: 0 },
+            { sellIn: -10, quality: 0 },
+            { sellIn: -11, quality: 0 },
+            { sellIn: -12, quality: 0 },
+            { sellIn: -13, quality: 0 },
+            { sellIn: -14, quality: 0 },
+            { sellIn: -15, quality: 0 },
+            { sellIn: -16, quality: 0 },
+            { sellIn: -17, quality: 0 },
+            { sellIn: -18, quality: 0 },
+            { sellIn: -19, quality: 0 },
+            { sellIn: -20, quality: 0 },
+            { sellIn: -21, quality: 0 },
+            { sellIn: -22, quality: 0 },
+            { sellIn: -23, quality: 0 },
+            { sellIn: -24, quality: 0 },
+            { sellIn: -25, quality: 0 },
+            { sellIn: -26, quality: 0 },
+            { sellIn: -27, quality: 0 },
+        ]
+        const items = [new Item("Conjured Item", 2, 15)];
         testItem(items, expected);
     });
 
