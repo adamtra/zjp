@@ -12,84 +12,61 @@ export class Item {
 
 export class GildedRose {
     items: Array<Item>;
-    dontDecreaseQuality = ['Sulfuras, Hand of Ragnaros', 'Aged Brie', 'Backstage passes to a TAFKAL80ETC concert'];
 
     constructor(items = [] as Array<Item>) {
         this.items = items;
     }
 
+    descreaseQuality(item: Item) {
+        if (item.quality > 0) {
+            if (item.name != 'Sulfuras, Hand of Ragnaros') {
+                item.quality = item.quality - 1
+                if (item.name.lastIndexOf('Conjured ', 0) === 0 && item.quality > 0) {
+                    item.quality = item.quality - 1;
+                }
+            }
+        }
+    }
 
     updateQuality() {
         for (const item of this.items) {
-            this.higherSellIn(item);
-            this.decreaseSellIn(item);
-            this.lowerSellIn(item);
+            if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+                this.descreaseQuality(item);
+            } else {
+                if (item.quality < 50) {
+                    item.quality = item.quality + 1
+                    if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+                        if (item.sellIn < 11) {
+                            if (item.quality < 50) {
+                                item.quality = item.quality + 1
+                            }
+                        }
+                        if (item.sellIn < 6) {
+                            if (item.quality < 50) {
+                                item.quality = item.quality + 1
+                            }
+                        }
+                    }
+                }
+            }
+            if (item.name != 'Sulfuras, Hand of Ragnaros') {
+                item.sellIn = item.sellIn - 1;
+            }
+            if (item.sellIn < 0) {
+                if (item.name != 'Aged Brie') {
+                    if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+                        this.descreaseQuality(item);
+                    } else {
+                        item.quality = item.quality - item.quality
+                    }
+                } else {
+                    if (item.quality < 50) {
+                        item.quality = item.quality + 1
+                    }
+                }
+            }
         }
 
         return this.items;
-    }
-
-    private decreaseSellIn(item: Item) {
-        if (item.name != 'Sulfuras, Hand of Ragnaros') {
-            item.sellIn = item.sellIn - 1;
-        }
-    }
-
-    private lowerSellIn(item: Item) {
-        if (item.sellIn < 0) {
-            if (item.name == 'Aged Brie') {
-                this.increaseQuality(item);
-            }
-            if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
-                item.quality = 0;
-            }
-            this.decreaseNormalPoduct(item);
-        }
-    }
-
-    private decreaseNormalPoduct(item: Item) {
-        if (this.dontDecreaseQuality.indexOf(item.name) === -1) {
-            this.decreaseQuality(item);
-        }
-    }
-
-    private higherSellIn(item: Item) {
-        this.decreaseNormalPoduct(item);
-        if (item.name == 'Aged Brie' || item.name == 'Backstage passes to a TAFKAL80ETC concert') {
-            if (item.quality < 50) {
-                item.quality = item.quality + 1;
-                this.increaseBackstageQuality(item);
-            }
-        }
-    }
-
-    private increaseBackstageQuality(item: Item) {
-        if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
-            if (item.sellIn < 11) {
-                this.increaseQuality(item);
-            }
-            if (item.sellIn < 6) {
-                this.increaseQuality(item);
-            }
-        }
-    }
-
-    private increaseQuality(item: Item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-        }
-    }
-
-    private decreaseQuality(item: Item) {
-        if (item.quality > 0) {
-            item.quality = item.quality - 1;
-            this.conjuredItem(item);
-        }
-    }
-
-    private conjuredItem(item: Item) {
-        if (item.name.lastIndexOf('Conjured ', 0) === 0 && item.quality > 0) {
-            item.quality = item.quality - 1;
-        }
     }
 }
