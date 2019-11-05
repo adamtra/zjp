@@ -13,6 +13,12 @@ export class Item {
 export class GildedRose {
     items: Array<Item>;
 
+    dontDescreaseQuality = [
+        'Sulfuras, Hand of Ragnaros',
+        'Backstage passes to a TAFKAL80ETC concert',
+        'Aged Brie'
+    ];
+
     constructor(items = [] as Array<Item>) {
         this.items = items;
     }
@@ -24,7 +30,7 @@ export class GildedRose {
     }
 
     descreaseQuality(item: Item) {
-        if (item.name != 'Sulfuras, Hand of Ragnaros') {
+        if (this.dontDescreaseQuality.indexOf(item.name) === -1) {
             if (item.quality > 0) {
                 item.quality = item.quality - 1
                 if (item.name.lastIndexOf('Conjured ', 0) === 0 && item.quality > 0) {
@@ -61,15 +67,13 @@ export class GildedRose {
     }
 
     negativeSellIn(item: Item) {
-        if (item.name != 'Aged Brie') {
-            if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                this.descreaseQuality(item);
-            } else {
-                item.quality = item.quality - item.quality
-            }
-        } else {
+        if (item.name == 'Aged Brie') {
             this.increaseQuality(item);
-        }
+        } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+            item.quality = 0
+        } else {
+            this.descreaseQuality(item);
+        }   
     }
 
     updateQuality() {
