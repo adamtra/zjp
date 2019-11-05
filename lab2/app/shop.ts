@@ -43,6 +43,7 @@ export class GildedRose {
     }
 
     backstageIncreaseQuality(item: Item) {
+        this.increaseQuality(item);
         if (item.sellIn < 11) {
             this.increaseQuality(item);
         }
@@ -58,17 +59,14 @@ export class GildedRose {
     }
 
     beforeSellIn(item: Item) {
-        if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-            if (item.name.lastIndexOf('Conjured ', 0) === 0) {
-                this.conjuredDecreaseQuality(item);
-            } else {
-                this.decreaseQuality(item);
-            }
-        } else {
+        if (item.name.lastIndexOf('Conjured ', 0) === 0) {
+            this.conjuredDecreaseQuality(item);
+        } else if (item.name == 'Aged Brie') {
             this.increaseQuality(item);
-            if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
-                this.backstageIncreaseQuality(item);
-            }
+        } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+            this.backstageIncreaseQuality(item);
+        } else {
+            this.decreaseQuality(item);
         }
     }
 
