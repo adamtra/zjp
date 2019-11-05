@@ -121,7 +121,7 @@ return this.items;
 
 Krok 2: Deklaracja funkcji zmiejszającej parametr "Quality"
 ```ts
-descreaseQuality(item: Item) {
+decreaseQuality(item: Item) {
     if (item.quality > 0) {
         if (item.name != 'Sulfuras, Hand of Ragnaros') {
             item.quality = item.quality - 1
@@ -137,7 +137,7 @@ Krok 3: Podstawienie funkcji z kroku 2
 ```ts
 for (const item of this.items) {
     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-        this.descreaseQuality(item);
+        this.decreaseQuality(item);
     } else {
         if (item.quality < 50) {
             item.quality = item.quality + 1
@@ -161,7 +161,7 @@ for (const item of this.items) {
     if (item.sellIn < 0) {
         if (item.name != 'Aged Brie') {
             if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                this.descreaseQuality(item);
+                this.decreaseQuality(item);
             } else {
                 item.quality = item.quality - item.quality
             }
@@ -196,7 +196,7 @@ Krok 5: Podstawienie funkcji z kroku 4
 ```ts
 for (const item of this.items) {
     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-        this.descreaseQuality(item);
+        this.decreaseQuality(item);
     } else {
         if (item.quality < 50) {
             item.quality = item.quality + 1
@@ -211,7 +211,7 @@ for (const item of this.items) {
     if (item.sellIn < 0) {
         if (item.name != 'Aged Brie') {
             if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                this.descreaseQuality(item);
+                this.decreaseQuality(item);
             } else {
                 item.quality = item.quality - item.quality
             }
@@ -239,7 +239,7 @@ Krok 7: Podstawienie funkcji z kroku 6
 ```ts
 for (const item of this.items) {
     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-        this.descreaseQuality(item);
+        this.decreaseQuality(item);
     } else {
         if (item.quality < 50) {
             item.quality = item.quality + 1
@@ -252,7 +252,7 @@ for (const item of this.items) {
     if (item.sellIn < 0) {
         if (item.name != 'Aged Brie') {
             if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                this.descreaseQuality(item);
+                this.decreaseQuality(item);
             } else {
                 item.quality = item.quality - item.quality
             }
@@ -271,7 +271,7 @@ Krok 8: Przeniesienie funkcji zwiększającej parametr "Quality" dla typu "Backs
 ```ts
 for (const item of this.items) {
     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-        this.descreaseQuality(item);
+        this.decreaseQuality(item);
     } else {
         if (item.quality < 50) {
             item.quality = item.quality + 1
@@ -284,7 +284,7 @@ for (const item of this.items) {
     if (item.sellIn < 0) {
         if (item.name != 'Aged Brie') {
             if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                this.descreaseQuality(item);
+                this.decreaseQuality(item);
             } else {
                 item.quality = item.quality - item.quality
             }
@@ -322,7 +322,7 @@ Krok 10: Podstawienie funkcji z kroku 9
 updateQuality() {
     for (const item of this.items) {
         if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-            this.descreaseQuality(item);
+            this.decreaseQuality(item);
         } else {
             this.increaseQuality(item);
             if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
@@ -333,7 +333,7 @@ updateQuality() {
         if (item.sellIn < 0) {
             if (item.name != 'Aged Brie') {
                 if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                    this.descreaseQuality(item);
+                    this.decreaseQuality(item);
                 } else {
                     item.quality = item.quality - item.quality
                 }
@@ -349,7 +349,7 @@ updateQuality() {
 
 Krok 11: Zmiana kolejności warunków w funkcji zmieniejszającej parametr "Quality"
 ```ts
-descreaseQuality(item: Item) {
+decreaseQuality(item: Item) {
     if (item.name != 'Sulfuras, Hand of Ragnaros') {
         if (item.quality > 0) {
             item.quality = item.quality - 1
@@ -365,7 +365,7 @@ Krok 12: Deklaracja funkcji wywoływanej przed zmniejszeniem parametru "SellIn"
 ```ts
 beforeSellIn(item: Item) {
     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-        this.descreaseQuality(item);
+        this.decreaseQuality(item);
     } else {
         this.increaseQuality(item);
         if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
@@ -383,7 +383,7 @@ for (const item of this.items) {
     if (item.sellIn < 0) {
         if (item.name != 'Aged Brie') {
             if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                this.descreaseQuality(item);
+                this.decreaseQuality(item);
             } else {
                 item.quality = item.quality - item.quality
             }
@@ -401,7 +401,7 @@ Krok 14: Deklaracja funkcji wywoływanej po zmniejszeniem parametru "SellIn"
  negativeSellIn(item: Item) {
     if (item.name != 'Aged Brie') {
         if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-            this.descreaseQuality(item);
+            this.decreaseQuality(item);
         } else {
             item.quality = item.quality - item.quality
         }
@@ -426,7 +426,7 @@ return this.items;
 
 Krok 16: Lista produktów, w których nie zmniejszamy parametru "Qualuty"
 ```ts
-dontDescreaseQuality = [
+dontdecreaseQuality = [
     'Sulfuras, Hand of Ragnaros',
     'Backstage passes to a TAFKAL80ETC concert',
     'Aged Brie',
@@ -435,8 +435,8 @@ dontDescreaseQuality = [
 
 Krok 17: Zastosowanie tej listy w funkcji zmniejszającej parametr "Quality"
 ```ts
-descreaseQuality(item: Item) {
-    if (this.dontDescreaseQuality.indexOf(item.name) === -1) {
+decreaseQuality(item: Item) {
+    if (this.dontdecreaseQuality.indexOf(item.name) === -1) {
         if (item.quality > 0) {
             item.quality = item.quality - 1
             if (item.name.lastIndexOf('Conjured ', 0) === 0 && item.quality > 0) {
@@ -446,7 +446,7 @@ descreaseQuality(item: Item) {
     }
 }
 ```
-Kod 18 Odwrócenie warunków w funkcji zerującej wartość parametru "Quality"
+Krok 18: Odwrócenie warunków w funkcji zerującej wartość parametru "Quality"
 ```ts
 negativeSellIn(item: Item) {
     if (item.name == 'Aged Brie') {
@@ -454,11 +454,57 @@ negativeSellIn(item: Item) {
     } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
         item.quality = 0
     } else {
-        this.descreaseQuality(item);
+        this.decreaseQuality(item);
     }
 }
 ```
 
+Krok 19: Deklaracja funkcji zmniejszającej parametru "Quality" dla produktów typu "Conjured"
+```ts
+conjuredDecreaseQuality(item: Item) {
+    this.decreaseQuality(item);
+    this.decreaseQuality(item);
+}
+```
+
+Krok 20: Podstawienie funckji z kroku 19
+```ts
+decreaseQuality(item: Item) {
+    if (this.dontDescreaseQuality.indexOf(item.name) === -1) {
+        if (item.quality > 0) {
+            item.quality = item.quality - 1;
+        }
+    }
+}
+
+beforeSellIn(item: Item) {
+    if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+        if (item.name.lastIndexOf('Conjured ', 0) === 0) {
+            this.conjuredDecreaseQuality(item);
+        } else {
+            this.decreaseQuality(item);
+        }
+    } else {
+        this.increaseQuality(item);
+        if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+            this.backstageIncreaseQuality(item);
+        }
+    }
+}
+
+negativeSellIn(item: Item) {
+    if (item.name == 'Aged Brie') {
+        this.increaseQuality(item);
+    } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+        item.quality = 0
+    } else if (item.name.lastIndexOf('Conjured ', 0) === 0) {
+        this.conjuredDecreaseQuality(item);
+    } else {
+        this.decreaseQuality(item);
+    }   
+}
+
+```
 
 == Kod po refaktoryzacji
 
