@@ -60,7 +60,7 @@ export class GildedRose {
         }
     }
 
-    afterSellIn(item: Item) {
+    negativeSellIn(item: Item) {
         if (item.name != 'Aged Brie') {
             if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
                 this.descreaseQuality(item);
@@ -77,7 +77,7 @@ export class GildedRose {
             this.beforeSellIn(item);
             this.decreaseSellIn(item);
             if (item.sellIn < 0) {
-                this.afterSellIn(item);
+                this.negativeSellIn(item);
             }
         }
 
