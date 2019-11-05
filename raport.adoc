@@ -60,6 +60,8 @@ return this.items;
 
 ```
 
+== Kroki refaktoryzacji
+
 Krok 1: Zmienić typ pętli i wykorzystanie elementów pętli
 ```ts
 for (const item of this.items) {
@@ -423,5 +425,8 @@ return this.items;
 ```
 
 == Kod po refaktoryzacji
+
+```ts
+```
 
 == Wyniki złożoności
