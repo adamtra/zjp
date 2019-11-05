@@ -1,10 +1,7 @@
 = GildedRose
 Adam Trawiński
-:toc:
 
-Content entered directly below the header but before the first section heading is called the preamble.
-
-== Kod przed refaktoryzają
+== Kod przed refaktoryzacją
 
 ```ts
 for (let i = 0; i < this.items.length; i++) {
@@ -120,7 +117,7 @@ for (const item of this.items) {
 return this.items;
 ```
 
-Krok 2: Funkcja zmiejszająca "Quality"
+Krok 2: Deklaracja funkcji zmiejszającej parametr "Quality"
 ```ts
 descreaseQuality(item: Item) {
     if (item.quality > 0) {
