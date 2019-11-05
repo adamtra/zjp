@@ -174,6 +174,70 @@ for (const item of this.items) {
 return this.items;
 ```
 
+Krok 4: Deklaracja funkcji zwiększającej parametr "Quality" dla przedmiotów typu "Backstage"
+```ts
+backstageIncreaseQuality(item: Item) {
+    if (item.sellIn < 11) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1
+        }
+    }
+    if (item.sellIn < 6) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1
+        }
+    }
+}
+```
+
+Krok 5: Podstawienie funkcji z kroku 4
+```ts
+for (const item of this.items) {
+    if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+        this.descreaseQuality(item);
+    } else {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1
+            if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+                this.backstageIncreaseQuality(item);
+            }
+        }
+    }
+    if (item.name != 'Sulfuras, Hand of Ragnaros') {
+        item.sellIn = item.sellIn - 1;
+    }
+    if (item.sellIn < 0) {
+        if (item.name != 'Aged Brie') {
+            if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+                this.descreaseQuality(item);
+            } else {
+                item.quality = item.quality - item.quality
+            }
+        } else {
+            if (item.quality < 50) {
+                item.quality = item.quality + 1
+            }
+        }
+    }
+}
+
+return this.items;
+```
+
+Krok 6: Deklaracja funkcji zminiejszającej parametr "SellIn"
+```ts
+decreaseSellIn(item: Item) {
+    if (item.name != 'Sulfuras, Hand of Ragnaros') {
+        item.sellIn = item.sellIn - 1;
+    }
+}
+```
+Krok 7: Podstawienie funkcji z kroku 6
+```ts
+
+```
+
+
 
 == Kod po refaktoryzacji
 
