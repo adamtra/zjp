@@ -1,5 +1,5 @@
-= GildedRose
-Adam Trawiński
+:source-highlighter: rouge
+= GildedRose - Adam Trawiński
 
 == Kod przed refaktoryzacją
 
