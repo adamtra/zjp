@@ -633,3 +633,11 @@ updateQuality() {
 ```
 
 == Wyniki złożoności
+image::complexity.png[]
+
+Na niebiesko pokolorowano wartości przed zmianami, a na żółto po.
+Można zaobserwować, że ogólna złożoność nie zmieniła się natomiast średni wynik na funkcję oraz najgorszy wynik zostały drastycznie zmniejszone.
+
+== Podsumowanie
+
+Kod po refaktoryzacji jest bardzo podatny na zmiany i można w stosunkowo łatwy sposób dodać nowe typy produktów. Obecna wersja jest w takiej postaci, że stosunkowo łatwo można byłoby zastosować polimorfizm.
