@@ -1,6 +1,7 @@
 :source-highlighter: rouge
 = GildedRose
-Adam Trawiński
+
+Autor: Adam Trawiński
 
 https://github.com/adamtra/zjp
 
