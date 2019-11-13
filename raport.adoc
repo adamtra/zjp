@@ -1,5 +1,14 @@
 :source-highlighter: rouge
-= GildedRose - Adam Trawiński
+= GildedRose
+Adam Trawiński
+
+https://github.com/adamtra/zjp
+
+== Wstęp
+
+Ta praca dotyczy refaktoryzacji katy GildedRose w technologii TypeScript dostępnej pod adresem: https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/TypeScript
+
+Po każdej zmianie zostały przeprowadzane testy, które kończył się pełnym sukcesem.
 
 == Kod przed refaktoryzacją
 
@@ -424,7 +433,7 @@ for (const item of this.items) {
 return this.items;
 ```
 
-Krok 16: Lista produktów, w których nie zmniejszamy parametru "Qualuty"
+Krok 16: Lista produktów, w których nie zmniejszamy parametru "Quality"
 ```ts
 dontDescreaseQuality = [
     'Sulfuras, Hand of Ragnaros',
