@@ -11,6 +11,10 @@ Ta praca dotyczy refaktoryzacji katy GildedRose w technologii TypeScript dostęp
 
 Po każdej zmianie zostały przeprowadzane testy, które kończył się pełnym sukcesem.
 
+Wymogiem uruchomienia aplikacji jest posiadanie środowiska Node.js.
+Aby uruchomić aplikację trzeba wejść do folderu z aplikacją np. lab2 i wykonać komendę "npm install".
+Następnie w celu przeprowadzenia testów należy wykonać komendę "npm test".
+
 == Kod przed refaktoryzacją
 
 ```ts
