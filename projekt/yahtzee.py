@@ -20,13 +20,13 @@ class Yahtzee:
 
     @staticmethod
     def yahtzee(dice):
-        counts = [0] * (len(dice) + 1)
+        i = 0
         for die in dice:
-            counts[die - 1] += 1
-        for i in range(len(counts)):
-            if counts[i] == 5:
-                return 50
-        return 0
+            if i != 0 and die != dice[i - 1]:
+                return 0
+            i += 1
+        return 50
+
 
     @staticmethod
     def sumByNumber(dices, number):
