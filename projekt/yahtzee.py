@@ -58,18 +58,18 @@ class Yahtzee:
         return Yahtzee.sumByNumber(self.dice, 6)
 
     @staticmethod
-    def score_pair(d1, d2, d3, d4, d5):
+    def sumOfAKind(dices, kind):
         counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6 - at - 1] == 2):
-                return (6 - at) * 2
+        for dice in dices:
+            counts[dice - 1] += 1
+        for i in range(len(dices), 0, -1):
+            if counts[i] == kind:
+                return (i + 1) * kind
         return 0
+
+    @staticmethod
+    def score_pair(d1, d2, d3, d4, d5):
+        return Yahtzee.sumOfAKind([d1, d2, d3, d4, d5], 2)
 
     @staticmethod
     def two_pair(d1, d2, d3, d4, d5):
@@ -93,29 +93,11 @@ class Yahtzee:
 
     @staticmethod
     def four_of_a_kind(d1, d2, d3, d4, d5):
-        tallies = [0] * 6
-        tallies[d1 - 1] += 1
-        tallies[d2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
-        for i in range(6):
-            if (tallies[i] == 4):
-                return (i + 1) * 4
-        return 0
+        return Yahtzee.sumOfAKind([d1, d2, d3, d4, d5], 4)
 
     @staticmethod
     def three_of_a_kind(d1, d2, d3, d4, d5):
-        t = [0] * 6
-        t[d1 - 1] += 1
-        t[d2 - 1] += 1
-        t[d3 - 1] += 1
-        t[d4 - 1] += 1
-        t[d5 - 1] += 1
-        for i in range(6):
-            if (t[i] == 3):
-                return (i + 1) * 3
-        return 0
+        return Yahtzee.sumOfAKind([d1, d2, d3, d4, d5], 3)
 
     @staticmethod
     def smallStraight(d1, d2, d3, d4, d5):
