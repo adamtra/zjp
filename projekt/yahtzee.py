@@ -21,50 +21,24 @@ class Yahtzee:
         return 0
 
     @staticmethod
-    def ones(d1, d2, d3, d4, d5):
+    def sumByNumber(dices, number):
         sum = 0
-        if (d1 == 1):
-            sum += 1
-        if (d2 == 1):
-            sum += 1
-        if (d3 == 1):
-            sum += 1
-        if (d4 == 1):
-            sum += 1
-        if (d5 == 1):
-            sum += 1
-
+        for dice in dices:
+            if dice == number:
+                sum += number
         return sum
+
+    @staticmethod
+    def ones(d1, d2, d3, d4, d5):
+        return Yahtzee.sumByNumber([d1, d2, d3, d4, d5], 1)
 
     @staticmethod
     def twos(d1, d2, d3, d4, d5):
-        sum = 0
-        if (d1 == 2):
-            sum += 2
-        if (d2 == 2):
-            sum += 2
-        if (d3 == 2):
-            sum += 2
-        if (d4 == 2):
-            sum += 2
-        if (d5 == 2):
-            sum += 2
-        return sum
+        return Yahtzee.sumByNumber([d1, d2, d3, d4, d5], 2)
 
     @staticmethod
     def threes(d1, d2, d3, d4, d5):
-        s = 0
-        if (d1 == 3):
-            s += 3
-        if (d2 == 3):
-            s += 3
-        if (d3 == 3):
-            s += 3
-        if (d4 == 3):
-            s += 3
-        if (d5 == 3):
-            s += 3
-        return s
+        return Yahtzee.sumByNumber([d1, d2, d3, d4, d5], 3)
 
     def __init__(self, d1, d2, d3, d4, _5):
         self.dice = [0] * 5
@@ -75,26 +49,13 @@ class Yahtzee:
         self.dice[4] = _5
 
     def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4):
-                sum += 4
-        return sum
+        return Yahtzee.sumByNumber(self.dice, 4)
 
     def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)):
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
+        return Yahtzee.sumByNumber(self.dice, 5)
 
     def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)):
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
+        return Yahtzee.sumByNumber(self.dice, 6)
 
     @staticmethod
     def score_pair(d1, d2, d3, d4, d5):
