@@ -1,5 +1,13 @@
 class Yahtzee:
 
+    def __init__(self, d1, d2, d3, d4, d5):
+        self.dice = [0] * 5
+        self.dice[0] = d1
+        self.dice[1] = d2
+        self.dice[2] = d3
+        self.dice[3] = d4
+        self.dice[4] = d5
+
     @staticmethod
     def chance(d1, d2, d3, d4, d5):
         total = 0
@@ -39,14 +47,6 @@ class Yahtzee:
     @staticmethod
     def threes(d1, d2, d3, d4, d5):
         return Yahtzee.sumByNumber([d1, d2, d3, d4, d5], 3)
-
-    def __init__(self, d1, d2, d3, d4, d5):
-        self.dice = [0] * 5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = d5
 
     def fours(self):
         return Yahtzee.sumByNumber(self.dice, 4)
