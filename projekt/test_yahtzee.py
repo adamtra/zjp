@@ -6,9 +6,9 @@ from yahtzee import Yahtzee
 
 def test_chance_scores_sum_of_all_dice():
     expected = 15
-    actual = Yahtzee.chance(2, 3, 4, 5, 1)
+    actual = Yahtzee(2, 3, 4, 5, 1).chance()
     assert expected == actual
-    assert 16 == Yahtzee.chance(3, 3, 4, 5, 1)
+    assert 16 == Yahtzee(3, 3, 4, 5, 1).chance()
 
 
 def test_yahtzee_scores_50():
