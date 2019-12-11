@@ -60,9 +60,8 @@ class Yahtzee:
                 return (i + 1) * kind
         return 0
 
-    @staticmethod
-    def score_pair(d1, d2, d3, d4, d5):
-        return Yahtzee.sumOfAKind([d1, d2, d3, d4, d5], 2)
+    def score_pair(self):
+        return Yahtzee.sumOfAKind(self.dice, 2)
 
     @staticmethod
     def two_pair(d1, d2, d3, d4, d5):
