@@ -40,9 +40,8 @@ class Yahtzee:
     def twos(self):
         return Yahtzee.sumByNumber(self.dice, 2)
 
-    @staticmethod
-    def threes(d1, d2, d3, d4, d5):
-        return Yahtzee.sumByNumber([d1, d2, d3, d4, d5], 3)
+    def threes(self):
+        return Yahtzee.sumByNumber(self.dice, 3)
 
     def fours(self):
         return Yahtzee.sumByNumber(self.dice, 4)

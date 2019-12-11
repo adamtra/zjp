@@ -32,8 +32,8 @@ def test_2s():
 
 
 def test_threes():
-    assert 6 == Yahtzee.threes(1, 2, 3, 2, 3)
-    assert 12 == Yahtzee.threes(2, 3, 3, 3, 3)
+    assert 6 == Yahtzee(1, 2, 3, 2, 3).threes()
+    assert 12 == Yahtzee(2, 3, 3, 3, 3).threes()
 
 
 def test_fours_test():
