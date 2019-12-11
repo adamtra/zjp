@@ -83,10 +83,10 @@ def test_small_straight():
     assert 0 == Yahtzee(1, 2, 2, 4, 5).small_straight()
 
 
-def test_largeStraight():
-    assert 20 == Yahtzee.largeStraight(6, 2, 3, 4, 5)
-    assert 20 == Yahtzee.largeStraight(2, 3, 4, 5, 6)
-    assert 0 == Yahtzee.largeStraight(1, 2, 2, 4, 5)
+def test_large_straight():
+    assert 20 == Yahtzee(6, 2, 3, 4, 5).large_straight()
+    assert 20 == Yahtzee(2, 3, 4, 5, 6).large_straight()
+    assert 0 == Yahtzee(1, 2, 2, 4, 5).large_straight()
 
 
 def test_fullHouse():
