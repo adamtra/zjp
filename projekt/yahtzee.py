@@ -118,8 +118,7 @@ class Yahtzee:
             return 20
         return 0
 
-    @staticmethod
-    def fullHouse(d1, d2, d3, d4, d5):
+    def full_house(self):
         tallies = []
         _2 = False
         i = 0
@@ -128,11 +127,11 @@ class Yahtzee:
         _3_at = 0
 
         tallies = [0] * 6
-        tallies[d1 - 1] += 1
-        tallies[d2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
+        tallies[self.dice[0] - 1] += 1
+        tallies[self.dice[1] - 1] += 1
+        tallies[self.dice[2] - 1] += 1
+        tallies[self.dice[3] - 1] += 1
+        tallies[self.dice[4] - 1] += 1
 
         for i in range(6):
             if (tallies[i] == 2):

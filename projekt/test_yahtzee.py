@@ -89,8 +89,8 @@ def test_large_straight():
     assert 0 == Yahtzee(1, 2, 2, 4, 5).large_straight()
 
 
-def test_fullHouse():
-    assert 18 == Yahtzee.fullHouse(6, 2, 2, 2, 6)
-    assert 0 == Yahtzee.fullHouse(2, 3, 4, 5, 6)
+def test_full_house():
+    assert 18 == Yahtzee(6, 2, 2, 2, 6).full_house()
+    assert 0 == Yahtzee(2, 3, 4, 5, 6).full_house()
 
 
