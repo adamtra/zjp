@@ -37,9 +37,8 @@ class Yahtzee:
     def ones(self):
         return Yahtzee.sumByNumber(self.dice, 1)
 
-    @staticmethod
-    def twos(d1, d2, d3, d4, d5):
-        return Yahtzee.sumByNumber([d1, d2, d3, d4, d5], 2)
+    def twos(self):
+        return Yahtzee.sumByNumber(self.dice, 2)
 
     @staticmethod
     def threes(d1, d2, d3, d4, d5):

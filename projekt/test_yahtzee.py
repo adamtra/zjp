@@ -27,8 +27,8 @@ def test_1s():
 
 
 def test_2s():
-    assert 4 == Yahtzee.twos(1, 2, 3, 2, 6)
-    assert 10 == Yahtzee.twos(2, 2, 2, 2, 2)
+    assert 4 == Yahtzee(1, 2, 3, 2, 6).twos()
+    assert 10 == Yahtzee(2, 2, 2, 2, 2).twos()
 
 
 def test_threes():
