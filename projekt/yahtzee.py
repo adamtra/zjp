@@ -54,9 +54,9 @@ class Yahtzee:
         counts = [0] * 6
         for dice in self.dice:
             counts[dice - 1] += 1
-        for i in range(len(self.dice), 0, -1):
-            if counts[i] == kind:
-                return (i + 1) * kind
+        for i in range(6, 0, -1):
+            if counts[i - 1] == kind:
+                return i * kind
         return 0
 
     def score_pair(self):
