@@ -85,9 +85,8 @@ class Yahtzee:
     def four_of_a_kind(self):
         return Yahtzee.sumOfAKind(self.dice, 4)
 
-    @staticmethod
-    def three_of_a_kind(d1, d2, d3, d4, d5):
-        return Yahtzee.sumOfAKind([d1, d2, d3, d4, d5], 3)
+    def three_of_a_kind(self):
+        return Yahtzee.sumOfAKind(self.dice, 3)
 
     @staticmethod
     def smallStraight(d1, d2, d3, d4, d5):
