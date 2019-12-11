@@ -51,9 +51,7 @@ class Yahtzee:
         return self.sum_by_number(6)
 
     def sum_of_a_kind(self, kind):
-        counts = [0] * 6
-        for dice in self.dice:
-            counts[dice - 1] += 1
+        counts = self.count_occurrences()
         for i in range(6, 0, -1):
             if counts[i - 1] == kind:
                 return i * kind
@@ -62,10 +60,14 @@ class Yahtzee:
     def score_pair(self):
         return self.sum_of_a_kind(2)
 
-    def two_collections(self, first, second):
+    def count_occurrences(self):
         counts = [0] * 6
         for die in self.dice:
             counts[die - 1] += 1
+        return counts
+
+    def two_collections(self, first, second):
+        counts = self.count_occurrences()
         found = 0
         score = 0
         for i in range(6, 0, -1):
