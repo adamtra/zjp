@@ -17,11 +17,10 @@ class Yahtzee:
         total += self.dice[4]
         return total
 
-    @staticmethod
-    def yahtzee(dice):
+    def yahtzee(self):
         i = 0
-        for die in dice:
-            if i != 0 and die != dice[i - 1]:
+        for die in self.dice:
+            if i != 0 and die != self.dice[i - 1]:
                 return 0
             i += 1
         return 50

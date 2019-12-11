@@ -13,10 +13,10 @@ def test_chance_scores_sum_of_all_dice():
 
 def test_yahtzee_scores_50():
     expected = 50
-    actual = Yahtzee.yahtzee([4, 4, 4, 4, 4])
+    actual = Yahtzee(4, 4, 4, 4, 4).yahtzee()
     assert expected == actual
-    assert 50 == Yahtzee.yahtzee([6, 6, 6, 6, 6])
-    assert 0 == Yahtzee.yahtzee([6, 6, 6, 6, 3])
+    assert 50 == Yahtzee(6, 6, 6, 6, 6).yahtzee()
+    assert 0 == Yahtzee(6, 6, 6, 6, 3).yahtzee()
 
 
 def test_1s():
