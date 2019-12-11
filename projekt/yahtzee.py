@@ -25,32 +25,30 @@ class Yahtzee:
             i += 1
         return 50
 
-
-    @staticmethod
-    def sumByNumber(dices, number):
+    def sum_by_number(self, number):
         sum = 0
-        for dice in dices:
+        for dice in self.dice:
             if dice == number:
                 sum += number
         return sum
 
     def ones(self):
-        return Yahtzee.sumByNumber(self.dice, 1)
+        return self.sum_by_number(1)
 
     def twos(self):
-        return Yahtzee.sumByNumber(self.dice, 2)
+        return self.sum_by_number(2)
 
     def threes(self):
-        return Yahtzee.sumByNumber(self.dice, 3)
+        return self.sum_by_number(3)
 
     def fours(self):
-        return Yahtzee.sumByNumber(self.dice, 4)
+        return self.sum_by_number(4)
 
     def fives(self):
-        return Yahtzee.sumByNumber(self.dice, 5)
+        return self.sum_by_number(5)
 
     def sixes(self):
-        return Yahtzee.sumByNumber(self.dice, 6)
+        return self.sum_by_number(6)
 
     @staticmethod
     def sumOfAKind(dices, kind):
