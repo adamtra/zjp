@@ -50,18 +50,17 @@ class Yahtzee:
     def sixes(self):
         return self.sum_by_number(6)
 
-    @staticmethod
-    def sumOfAKind(dices, kind):
+    def sum_of_a_kind(self, kind):
         counts = [0] * 6
-        for dice in dices:
+        for dice in self.dice:
             counts[dice - 1] += 1
-        for i in range(len(dices), 0, -1):
+        for i in range(len(self.dice), 0, -1):
             if counts[i] == kind:
                 return (i + 1) * kind
         return 0
 
     def score_pair(self):
-        return Yahtzee.sumOfAKind(self.dice, 2)
+        return self.sum_of_a_kind(2)
 
     def two_pair(self):
         counts = [0] * 6
@@ -83,10 +82,10 @@ class Yahtzee:
             return 0
 
     def four_of_a_kind(self):
-        return Yahtzee.sumOfAKind(self.dice, 4)
+        return self.sum_of_a_kind(4)
 
     def three_of_a_kind(self):
-        return Yahtzee.sumOfAKind(self.dice, 3)
+        return self.sum_of_a_kind(3)
 
     def small_straight(self):
         tallies = [0] * 6
