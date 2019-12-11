@@ -62,24 +62,26 @@ class Yahtzee:
     def score_pair(self):
         return self.sum_of_a_kind(2)
 
-    def two_pair(self):
+    def two_collections(self, first, second):
         counts = [0] * 6
-        counts[self.dice[0] - 1] += 1
-        counts[self.dice[1] - 1] += 1
-        counts[self.dice[2] - 1] += 1
-        counts[self.dice[3] - 1] += 1
-        counts[self.dice[4] - 1] += 1
-        n = 0
+        for die in self.dice:
+            counts[die - 1] += 1
+        found = 0
         score = 0
-        for i in range(6):
-            if (counts[6 - i - 1] == 2):
-                n = n + 1
-                score += (6 - i)
-
-        if (n == 2):
-            return score * 2
+        for i in range(6, 0, -1):
+            if counts[i - 1] == first or counts[i - 1] == second:
+                found += 1
+                if counts[i - 1] == first:
+                    score += i * first
+                else:
+                    score += i * second
+        if found == 2:
+            return score
         else:
             return 0
+
+    def two_pair(self):
+        return self.two_collections(2, 2)
 
     def four_of_a_kind(self):
         return self.sum_of_a_kind(4)
@@ -118,31 +120,4 @@ class Yahtzee:
         return 0
 
     def full_house(self):
-        tallies = []
-        _2 = False
-        i = 0
-        _2_at = 0
-        _3 = False
-        _3_at = 0
-
-        tallies = [0] * 6
-        tallies[self.dice[0] - 1] += 1
-        tallies[self.dice[1] - 1] += 1
-        tallies[self.dice[2] - 1] += 1
-        tallies[self.dice[3] - 1] += 1
-        tallies[self.dice[4] - 1] += 1
-
-        for i in range(6):
-            if (tallies[i] == 2):
-                _2 = True
-                _2_at = i + 1
-
-        for i in range(6):
-            if (tallies[i] == 3):
-                _3 = True
-                _3_at = i + 1
-
-        if (_2 and _3):
-            return _2_at * 2 + _3_at * 3
-        else:
-            return 0
+        return self.two_collections(2, 3)
