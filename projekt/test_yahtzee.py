@@ -60,9 +60,9 @@ def test_one_pair():
     assert 12 == Yahtzee(5, 3, 6, 6, 5).score_pair()
 
 
-def test_two_Pair():
-    assert 16 == Yahtzee.two_pair(3, 3, 5, 4, 5)
-    assert 0 == Yahtzee.two_pair(3, 3, 5, 5, 5)
+def test_two_pair():
+    assert 16 == Yahtzee(3, 3, 5, 4, 5).two_pair()
+    assert 0 == Yahtzee(3, 3, 5, 5, 5).two_pair()
 
 
 def test_three_of_a_kind():
