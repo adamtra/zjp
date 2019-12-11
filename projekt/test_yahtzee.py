@@ -20,10 +20,10 @@ def test_yahtzee_scores_50():
 
 
 def test_1s():
-    assert Yahtzee.ones(1, 2, 3, 4, 5) == 1
-    assert 2 == Yahtzee.ones(1, 2, 1, 4, 5)
-    assert 0 == Yahtzee.ones(6, 2, 2, 4, 5)
-    assert 4 == Yahtzee.ones(1, 2, 1, 1, 1)
+    assert Yahtzee(1, 2, 3, 4, 5).ones() == 1
+    assert 2 == Yahtzee(1, 2, 1, 4, 5).ones()
+    assert 0 == Yahtzee(6, 2, 2, 4, 5).ones()
+    assert 4 == Yahtzee(1, 2, 1, 1, 1).ones()
 
 
 def test_2s():

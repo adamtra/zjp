@@ -34,9 +34,8 @@ class Yahtzee:
                 sum += number
         return sum
 
-    @staticmethod
-    def ones(d1, d2, d3, d4, d5):
-        return Yahtzee.sumByNumber([d1, d2, d3, d4, d5], 1)
+    def ones(self):
+        return Yahtzee.sumByNumber(self.dice, 1)
 
     @staticmethod
     def twos(d1, d2, d3, d4, d5):
