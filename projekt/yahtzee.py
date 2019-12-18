@@ -93,35 +93,21 @@ class Yahtzee:
     def three_of_a_kind(self):
         return self.sum_of_a_kind(3)
 
+    def straight(self, start, end):
+        counts = self.count_occurrences()
+        score = 0
+        for i in range(start - 1, end):
+            if counts[i] == 1:
+                score += i + 1
+            else:
+                return 0
+        return score
+
     def small_straight(self):
-        tallies = [0] * 6
-        tallies[self.dice[0] - 1] += 1
-        tallies[self.dice[1] - 1] += 1
-        tallies[self.dice[2] - 1] += 1
-        tallies[self.dice[3] - 1] += 1
-        tallies[self.dice[4] - 1] += 1
-        if (tallies[0] == 1 and
-                tallies[1] == 1 and
-                tallies[2] == 1 and
-                tallies[3] == 1 and
-                tallies[4] == 1):
-            return 15
-        return 0
+        return self.straight(1, 5)
 
     def large_straight(self):
-        tallies = [0] * 6
-        tallies[self.dice[0] - 1] += 1
-        tallies[self.dice[1] - 1] += 1
-        tallies[self.dice[2] - 1] += 1
-        tallies[self.dice[3] - 1] += 1
-        tallies[self.dice[4] - 1] += 1
-        if (tallies[1] == 1 and
-                tallies[2] == 1 and
-                tallies[3] == 1 and
-                tallies[4] == 1
-                and tallies[5] == 1):
-            return 20
-        return 0
+        return self.straight(2, 6)
 
     def full_house(self):
         return self.two_collections(2, 3)
