@@ -12,11 +12,8 @@ class Yahtzee:
 
     def chance(self):
         total = 0
-        total += self.dice[0]
-        total += self.dice[1]
-        total += self.dice[2]
-        total += self.dice[3]
-        total += self.dice[4]
+        for die in self.dice:
+            total += die
         return total
 
     def yahtzee(self):
