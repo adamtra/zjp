@@ -1,5 +1,7 @@
 class Yahtzee:
 
+    max_val = 6
+
     def __init__(self, d1, d2, d3, d4, d5):
         self.dice = [0] * 5
         self.dice[0] = d1
@@ -52,7 +54,7 @@ class Yahtzee:
 
     def sum_of_a_kind(self, kind):
         counts = self.count_occurrences()
-        for i in range(6, 0, -1):
+        for i in range(self.max_val, 0, -1):
             if counts[i - 1] == kind:
                 return i * kind
         return 0
@@ -61,7 +63,7 @@ class Yahtzee:
         return self.sum_of_a_kind(2)
 
     def count_occurrences(self):
-        counts = [0] * 6
+        counts = [0] * self.max_val
         for die in self.dice:
             counts[die - 1] += 1
         return counts
@@ -70,7 +72,7 @@ class Yahtzee:
         counts = self.count_occurrences()
         found = 0
         score = 0
-        for i in range(6, 0, -1):
+        for i in range(self.max_val, 0, -1):
             if counts[i - 1] == first or counts[i - 1] == second:
                 found += 1
                 if counts[i - 1] == first:
