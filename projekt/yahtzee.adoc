@@ -1,5 +1,5 @@
 :source-highlighter: rouge
-= Yahtzee
+= Pokerowe zagrywki
 
 Autorzy: Adam Trawiński, Małgorzata Szałajda
 
