@@ -93,12 +93,15 @@ class Yahtzee:
     def straight(self, start, end):
         counts = self.count_occurrences()
         score = 0
+        expected = 0
         for i in range(start - 1, end):
-            if counts[i] == 1:
+            expected += i + 1
+            if counts[i] >= 1:
                 score += i + 1
-            else:
-                return 0
-        return score
+        if expected == score:
+            return score
+        else:
+            return 0
 
     def small_straight(self):
         return self.straight(1, 5)
